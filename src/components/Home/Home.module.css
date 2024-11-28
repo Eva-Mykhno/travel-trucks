@@ -1,0 +1,42 @@
+.background {
+  margin: 0 auto;
+  width: 1440px;
+  height: 696px;
+  background-color: var(--gray);
+  background-image: url(../../img/home-page-1x.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+@media screen and (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .background {
+    background-image: url(../../img/home-page-2x.jpg);
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: var(--inputs);
+  font-weight: 600;
+}
+
+.title {
+  margin-bottom: 16px;
+  font-size: 48px;
+  line-height: 0.67;
+}
+
+.text {
+  margin-bottom: 40px;
+  font-size: 24px;
+  line-height: 1.33;
+}
