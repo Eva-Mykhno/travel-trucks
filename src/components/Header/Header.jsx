@@ -4,25 +4,25 @@ import sprite from "../../img/icons.svg";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
+  const buildLinkClassName = ({ isActive }) => {
+    return clsx(s.link, isActive && s.active);
+  };
+
   return (
-    <div className={clsx(s.wrapper, "container")}>
+    <header className={clsx(s.wrapper, "container")}>
       <svg height="16" width="130">
         <use href={`${sprite}#icon-logo`} />
       </svg>
-      <div className={s.nav}>
-        <NavLink
-          to="/"
-          className={({ isActive }) => (isActive ? s.active : s.button)}>
+      <nav className={s.nav}>
+        <NavLink to="/" className={buildLinkClassName}>
           {" "}
           Home
         </NavLink>
-        <NavLink
-          to="/campers"
-          className={({ isActive }) => (isActive ? s.active : s.button)}>
+        <NavLink to="/catalog" className={buildLinkClassName}>
           Catalog
         </NavLink>
-      </div>
-    </div>
+      </nav>
+    </header>
   );
 };
 

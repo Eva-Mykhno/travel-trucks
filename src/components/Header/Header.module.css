@@ -14,10 +14,10 @@
   font-weight: 500;
 }
 
-.active {
-  color: var(--button-hover);
+.link {
+  color: var(--main);
 }
 
-.button {
-  color: var(--main);
+.active {
+  color: var(--button-hover);
 }

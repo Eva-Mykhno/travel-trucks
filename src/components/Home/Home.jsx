@@ -10,7 +10,7 @@ const Home = () => {
         <p className={s.text}>
           You can find everything you want in our catalog
         </p>
-        <Link to="/campers">
+        <Link to="/catalog">
           <button type="button">View Now</button>
         </Link>
       </div>
