@@ -55,23 +55,27 @@ const RentForm = () => {
               type="text"
               name="name"
               placeholder="Name*"
-              className={s.input}></Field>
+              className={s.input}
+            />
             <Field
               type="text"
               name="email"
               placeholder="Email*"
-              className={s.input}></Field>
+              className={s.input}
+            />
             <Field
               type="text"
               name="date"
               placeholder="Booking date*"
-              className={s.input}></Field>
+              className={s.input}
+            />
             <Field
               type="text"
               as="textarea"
               name="comment"
               placeholder="Comment"
-              className={s.input}></Field>
+              className={s.input}
+            />
           </div>
           <button type="submit" className={s.button}>
             Send

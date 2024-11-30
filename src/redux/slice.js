@@ -1,11 +1,15 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
-import { getCampers } from "./operations";
+import { getCampers, getFilteredCampers } from "./operations";
 
 const initialState = {
   items: [],
   isLoading: false,
   isError: null,
   favorites: [],
+  // filters: {
+  //   search: "",
+  // },
+  filteredItems: [],
 };
 
 const slice = createSlice({
@@ -23,6 +27,12 @@ const slice = createSlice({
         state.favorites.push(camperId);
       }
     },
+    setFilteredCampers(state, action) {
+      state.filteredItems = action.payload;
+    },
+    resetFilteredCampers(state) {
+      state.filteredItems = [];
+    },
   },
 
   extraReducers: (builder) => {
@@ -32,16 +42,28 @@ const slice = createSlice({
         state.isLoading = false;
         state.isError = false;
       })
-      .addMatcher(isAnyOf(getCampers.pending), (state) => {
-        state.isLoading = true;
-        state.isError = null;
-      })
-      .addMatcher(isAnyOf(getCampers.rejected), (state) => {
+      .addCase(getFilteredCampers.fulfilled, (state, action) => {
+        state.filteredItems = action.payload;
         state.isLoading = false;
-        state.isError = true;
-      });
+        state.isError = false;
+      })
+      .addMatcher(
+        isAnyOf(getCampers.pending, getFilteredCampers.pending),
+        (state) => {
+          state.isLoading = true;
+          state.isError = null;
+        }
+      )
+      .addMatcher(
+        isAnyOf(getCampers.rejected, getFilteredCampers.rejected),
+        (state) => {
+          state.isLoading = false;
+          state.isError = true;
+        }
+      );
   },
 });
 
-export const { toggleFavorite } = slice.actions;
+export const { toggleFavorite, setFilteredCampers, resetFilteredCampers } =
+  slice.actions;
 export const campersReducer = slice.reducer;

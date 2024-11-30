@@ -140,9 +140,15 @@
   font-weight: 500;
 }
 
-.buttonLoad {
+button.buttonLoad {
   padding: 16px 32px;
-  background-color: transparent;
+  background-color: var(--white);
   border: 1px solid var(--gray-light);
   color: var(--main);
+}
+
+button.buttonLoad:hover,
+button.buttonLoad.focus,
+button.buttonLoad:active {
+  border: 1px solid var(--button-hover);
 }
