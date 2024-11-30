@@ -49,10 +49,9 @@ a {
 
 button {
   cursor: pointer;
-  display: inline-block;
+  display: block;
   border-radius: 200px;
   padding: 16px 48px;
-  width: 173px;
   height: 56px;
   outline: none;
   border: none;

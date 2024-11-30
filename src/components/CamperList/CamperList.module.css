@@ -1,5 +1,148 @@
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 888px;
+}
+
+.errorMessage {
+  color: var(--button);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.item {
+  padding: 24px;
+  border: 1px solid var(--gray-light);
+  border-radius: 20px;
+  display: flex;
+  gap: 24px;
+}
+
+.img {
+  width: 292px;
+  height: 320px;
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.mainInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.titles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
   color: var(--main);
-  font-size: 20px;
-  background-color: blue;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+}
+
+.wrapPrice {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.heart {
+  stroke: var(--main);
+}
+
+.favorite {
+  stroke: var(--button);
+}
+
+.rating {
+  display: flex;
+  gap: 16px;
+}
+
+.wrapRating {
+  display: flex;
+  align-items: center;
+}
+
+.star {
+  fill: var(--rating);
+}
+
+.spanRating {
+  text-decoration: underline;
+  color: var(--main);
+  font-size: 16px;
+}
+
+.map {
+  color: var(--main);
+}
+
+.spanLocation {
+  color: var(--main);
+  font-size: 16px;
+}
+
+.text {
+  width: 525px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--text);
+  font-size: 16px;
+}
+
+.features {
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.feature {
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--badges);
+  border-radius: 100px;
+}
+
+.featureIcon {
+  color: var(--main);
+}
+
+.featureText {
+  color: var(--main);
+  text-transform: capitalize;
+  font-size: 16px;
+}
+
+.buttonShow {
+  padding: 16px 40px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.buttonLoad {
+  padding: 16px 32px;
+  background-color: transparent;
+  border: 1px solid var(--gray-light);
+  color: var(--main);
 }

@@ -5,11 +5,11 @@ export const getCampers = createAsyncThunk(
   "campers/getAll",
   async (_, thunkAPI) => {
     try {
-      const { data } = await api.get("");
-      console.log("Fetched campers:", data);
-      return data;
+      console.log("Making API call...");
+      const { data } = await api.get("/");
+      console.log(data);
+      return data.items;
     } catch (error) {
-      console.error("Error fetching campers:", error);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
