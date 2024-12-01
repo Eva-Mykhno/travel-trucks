@@ -1,0 +1,133 @@
+.form {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+}
+
+.location {
+  margin-bottom: 8px;
+  color: var(--gray);
+}
+
+.wrapInput {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  fill: var(--gray);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input {
+  margin-bottom: 40px;
+  width: 360px;
+  height: 56px;
+  padding: 16px 48px;
+  outline: none;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--inputs);
+  color: var(--main);
+}
+
+.input::placeholder {
+  color: var(--gray);
+}
+
+.filters {
+  margin-bottom: 24px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.divider {
+  margin-bottom: 24px;
+  width: 360px;
+  height: 1px;
+  background-color: var(--gray-light);
+}
+
+.title {
+  margin-bottom: 24px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--main);
+}
+
+.features {
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 8px;
+}
+
+.feature {
+  padding: 16px 12px;
+  width: 112px;
+  height: 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  border: 1px solid var(--gray-light);
+  cursor: pointer;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.featureIcon {
+  fill: var(--main);
+}
+
+.featureIconFill {
+  fill: none;
+  stroke: var(--main);
+}
+.featureText {
+  text-align: center;
+  color: var(--main);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.type {
+  padding: 2px 12px;
+  width: 112px;
+  height: 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  border: 1px solid var(--gray-light);
+  cursor: pointer;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hiddenCheckbox,
+.hiddenRadio {
+  display: none;
+}
+
+.checkboxLabel input:checked + .feature,
+.radioLabel input:checked + .type {
+  border: 1px solid var(--button);
+}
+
+.checkboxLabel .feature:hover,
+.radioLabel .type:hover {
+  border: 1px solid var(--button);
+}
+
+.button {
+  margin-top: 8px;
+  width: 166px;
+}

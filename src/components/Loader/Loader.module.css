@@ -1,5 +1,6 @@
 .loader {
   min-height: 100vh;
+  min-width: 100vh;
   background-color: var(--gray-light);
   display: flex;
   justify-content: center;

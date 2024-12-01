@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import s from "./Home.module.css";
 import clsx from "clsx";
+import s from "./Home.module.css";
 
 const Home = () => {
   return (

@@ -1,9 +1,9 @@
-import s from "./SearchBox.module.css";
+import { useDispatch } from "react-redux";
 import { Formik, Form, Field } from "formik";
 import { getFilteredCampers } from "../../redux/operations";
 import { resetFilteredCampers } from "../../redux/slice";
 import sprite from "../../img/icons.svg";
-import { useDispatch } from "react-redux";
+import s from "./SearchBox.module.css";
 
 const SearchBox = () => {
   const dispatch = useDispatch();
@@ -25,7 +25,6 @@ const SearchBox = () => {
 
   const normalizeLocation = (location) => {
     if (!location) return location;
-
     const normalizedLocation = location.toLowerCase().trim();
     return normalizedLocation;
   };
@@ -77,13 +76,18 @@ const SearchBox = () => {
     <Formik initialValues={initialFormValues} onSubmit={handleSubmit}>
       <Form className={s.form}>
         <label>
-          <Field
-            type="text"
-            name="location"
-            placeholder="City"
-            className={s.input}
-          />
-          Location
+          <div className={s.wrapInput}>
+            <p className={s.location}> Location</p>
+            <svg className={s.icon} height="20" width="20">
+              <use href={`${sprite}#icon-map`} />
+            </svg>
+            <Field
+              type="text"
+              name="location"
+              placeholder="City"
+              className={s.input}
+            />
+          </div>
         </label>
 
         <p className={s.filters}>Filters</p>
@@ -93,8 +97,8 @@ const SearchBox = () => {
         <h3 className={s.title}>Vehicle equipment</h3>
 
         <div className={s.features}>
-          <label>
-            <Field type="checkbox" name="AC" />
+          <label className={s.checkboxLabel}>
+            <Field type="checkbox" name="AC" className={s.hiddenCheckbox} />
             <div className={s.feature}>
               <svg className={s.featureIcon} height="32" width="32">
                 <use href={`${sprite}#icon-ac`} />
@@ -103,8 +107,12 @@ const SearchBox = () => {
             </div>
           </label>
 
-          <label>
-            <Field type="checkbox" name="transmission" />
+          <label className={s.checkboxLabel}>
+            <Field
+              type="checkbox"
+              name="transmission"
+              className={s.hiddenCheckbox}
+            />
             <div className={s.feature}>
               <svg className={s.featureIcon} height="32" width="32">
                 <use href={`${sprite}#icon-automatic`} />
@@ -113,8 +121,12 @@ const SearchBox = () => {
             </div>
           </label>
 
-          <label>
-            <Field type="checkbox" name="kitchen" />
+          <label className={s.checkboxLabel}>
+            <Field
+              type="checkbox"
+              name="kitchen"
+              className={s.hiddenCheckbox}
+            />
             <div className={s.feature}>
               <svg className={s.featureIcon} height="32" width="32">
                 <use href={`${sprite}#icon-kitchen`} />
@@ -123,8 +135,8 @@ const SearchBox = () => {
             </div>
           </label>
 
-          <label>
-            <Field type="checkbox" name="TV" />
+          <label className={s.checkboxLabel}>
+            <Field type="checkbox" name="TV" className={s.hiddenCheckbox} />
             <div className={s.feature}>
               <svg className={s.featureIcon} height="32" width="32">
                 <use href={`${sprite}#icon-tv`} />
@@ -133,8 +145,12 @@ const SearchBox = () => {
             </div>
           </label>
 
-          <label>
-            <Field type="checkbox" name="bathroom" />
+          <label className={s.checkboxLabel}>
+            <Field
+              type="checkbox"
+              name="bathroom"
+              className={s.hiddenCheckbox}
+            />
             <div className={s.feature}>
               <svg className={s.featureIcon} height="32" width="32">
                 <use href={`${sprite}#icon-bathroom`} />
@@ -143,8 +159,8 @@ const SearchBox = () => {
             </div>
           </label>
 
-          <label>
-            <Field type="checkbox" name="radio" />
+          <label className={s.checkboxLabel}>
+            <Field type="checkbox" name="radio" className={s.hiddenCheckbox} />
             <div className={s.feature}>
               <svg className={s.featureIcon} height="32" width="32">
                 <use href={`${sprite}#icon-radio`} />
@@ -153,8 +169,12 @@ const SearchBox = () => {
             </div>
           </label>
 
-          <label>
-            <Field type="checkbox" name="refrigerator" />
+          <label className={s.checkboxLabel}>
+            <Field
+              type="checkbox"
+              name="refrigerator"
+              className={s.hiddenCheckbox}
+            />
             <div className={s.feature}>
               <svg className={s.featureIcon} height="32" width="32">
                 <use href={`${sprite}#icon-refrigerator`} />
@@ -163,30 +183,34 @@ const SearchBox = () => {
             </div>
           </label>
 
-          <label>
-            <Field type="checkbox" name="microwave" />
+          <label className={s.checkboxLabel}>
+            <Field
+              type="checkbox"
+              name="microwave"
+              className={s.hiddenCheckbox}
+            />
             <div className={s.feature}>
-              <svg className={s.featureIcon} height="32" width="32">
+              <svg className={s.featureIconFill} height="32" width="32">
                 <use href={`${sprite}#icon-microwave`} />
               </svg>
-              <span className={s.featureText}>microwave</span>
+              <span className={s.featureText}>Microwave</span>
             </div>
           </label>
 
-          <label>
-            <Field type="checkbox" name="gas" />
+          <label className={s.checkboxLabel}>
+            <Field type="checkbox" name="gas" className={s.hiddenCheckbox} />
             <div className={s.feature}>
-              <svg className={s.featureIcon} height="32" width="32">
-                <use href={`${sprite}#icon-gas-stove`} />
+              <svg className={s.featureIconFill} height="32" width="32">
+                <use href={`${sprite}#icon-gas`} />
               </svg>
               <span className={s.featureText}>Gas</span>
             </div>
           </label>
 
-          <label>
-            <Field type="checkbox" name="water" />
+          <label className={s.checkboxLabel}>
+            <Field type="checkbox" name="water" className={s.hiddenCheckbox} />
             <div className={s.feature}>
-              <svg className={s.featureIcon} height="32" width="32">
+              <svg className={s.featureIconFill} height="32" width="32">
                 <use href={`${sprite}#icon-water`} />
               </svg>
               <span className={s.featureText}>Water</span>
@@ -198,15 +222,16 @@ const SearchBox = () => {
 
         <div className={s.divider}></div>
 
-        <div className={s.type}>
-          <label>
+        <div className={s.features}>
+          <label className={s.radioLabel}>
             <Field
               type="radio"
               name="form"
               value="panelTruck"
               id="panelTruck"
+              className={s.hiddenRadio}
             />
-            <div className={s.feature}>
+            <div className={s.type}>
               <svg className={s.featureIcon} height="32" width="32">
                 <use href={`${sprite}#icon-van`} />
               </svg>
@@ -214,14 +239,15 @@ const SearchBox = () => {
             </div>
           </label>
 
-          <label>
+          <label className={s.radioLabel}>
             <Field
               type="radio"
               name="form"
               value="fullyIntegrated"
               id="fully"
+              className={s.hiddenRadio}
             />
-            <div className={s.feature}>
+            <div className={s.type}>
               <svg className={s.featureIcon} height="32" width="32">
                 <use href={`${sprite}#icon-fully`} />
               </svg>
@@ -229,9 +255,15 @@ const SearchBox = () => {
             </div>
           </label>
 
-          <label>
-            <Field type="radio" name="form" value="alcove" id="alcove" />
-            <div className={s.feature}>
+          <label className={s.radioLabel}>
+            <Field
+              type="radio"
+              name="form"
+              value="alcove"
+              id="alcove"
+              className={s.hiddenRadio}
+            />
+            <div className={s.type}>
               <svg className={s.featureIcon} height="32" width="32">
                 <use href={`${sprite}#icon-alcove`} />
               </svg>
@@ -240,7 +272,9 @@ const SearchBox = () => {
           </label>
         </div>
 
-        <button type="submit">Search</button>
+        <button type="submit" className={s.button}>
+          Search
+        </button>
       </Form>
     </Formik>
   );

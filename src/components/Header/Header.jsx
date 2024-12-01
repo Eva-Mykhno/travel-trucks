@@ -1,7 +1,7 @@
-import clsx from "clsx";
-import s from "./Header.module.css";
-import sprite from "../../img/icons.svg";
 import { NavLink } from "react-router-dom";
+import clsx from "clsx";
+import sprite from "../../img/icons.svg";
+import s from "./Header.module.css";
 
 const Header = () => {
   const buildLinkClassName = ({ isActive }) => {

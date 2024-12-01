@@ -1,0 +1,57 @@
+.wrapper {
+  width: 630px;
+  height: 588px;
+  padding: 44px 52px;
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reviewer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.firstLetter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: var(--badges);
+  border-radius: 60px;
+  color: var(--button);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.name {
+  color: var(--main);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.filled {
+  fill: var(--rating);
+}
+
+.empty {
+  fill: var(--gray-light);
+}
+
+.text {
+  color: var(--text);
+  font-size: 16px;
+}

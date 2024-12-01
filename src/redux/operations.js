@@ -30,15 +30,6 @@ export const getFilteredCampers = createAsyncThunk(
 
       const { data } = await api.get(`/campers?${queryParams}`);
 
-      // add checked error
-      if (data.items.length === 0) {
-        return thunkAPI.rejectWithValue(
-          "No campers were found for your request."
-        );
-      }
-
-      //
-
       if (queryParams.includes("location")) {
         const locationParams = new URLSearchParams(queryParams).get("location");
         return filterByLocation(locationParams, data.items);
@@ -52,6 +43,18 @@ export const getFilteredCampers = createAsyncThunk(
       }
 
       return data.items;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const getCamperById = createAsyncThunk(
+  "campers/getCamperById",
+  async (id, thunkAPI) => {
+    try {
+      const response = await api.get(`/campers/${id}`);
+      return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

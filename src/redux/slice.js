@@ -1,14 +1,11 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
-import { getCampers, getFilteredCampers } from "./operations";
+import { getCampers, getFilteredCampers, getCamperById } from "./operations";
 
 const initialState = {
   items: [],
   isLoading: false,
   isError: null,
   favorites: [],
-  // filters: {
-  //   search: "",
-  // },
   filteredItems: [],
 };
 
@@ -47,15 +44,28 @@ const slice = createSlice({
         state.isLoading = false;
         state.isError = false;
       })
+      .addCase(getCamperById.fulfilled, (state, action) => {
+        state.selectedCamper = action.payload;
+        state.isLoading = false;
+        state.isError = false;
+      })
       .addMatcher(
-        isAnyOf(getCampers.pending, getFilteredCampers.pending),
+        isAnyOf(
+          getCampers.pending,
+          getFilteredCampers.pending,
+          getCamperById.pending
+        ),
         (state) => {
           state.isLoading = true;
           state.isError = null;
         }
       )
       .addMatcher(
-        isAnyOf(getCampers.rejected, getFilteredCampers.rejected),
+        isAnyOf(
+          getCampers.rejected,
+          getFilteredCampers.rejected,
+          getCamperById.rejected
+        ),
         (state) => {
           state.isLoading = false;
           state.isError = true;

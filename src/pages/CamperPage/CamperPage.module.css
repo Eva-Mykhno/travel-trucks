@@ -1,0 +1,48 @@
+.wrapper {
+  padding-top: 48px;
+  padding-bottom: 80px;
+}
+
+.links {
+  margin-bottom: 24px;
+  display: flex;
+  gap: 40px;
+  position: relative;
+}
+
+.text {
+  color: var(--main);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -24px;
+  width: 85px;
+  height: 5px;
+  background-color: var(--button);
+}
+
+.divider {
+  margin-bottom: 24px;
+  width: 1312px;
+  height: 1px;
+  background-color: var(--gray-light);
+}
+
+.wrap {
+  display: flex;
+  gap: 40px;
+}
+
+.content {
+  width: 631px;
+  flex: 0;
+}
+
+.wrapForm {
+  width: 642px;
+}

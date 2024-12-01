@@ -1,13 +1,14 @@
 .wrapper {
   width: 641px;
+  height: 588px;
   padding: 44px;
   border-radius: 10px;
-  border: 1 solid var(--gray-light);
+  border: 1px solid var(--gray-light);
   background-color: var(--white);
-  margin-bottom: 8px;
 }
 
 .title {
+  margin-bottom: 8px;
   color: var(--main);
   font-size: 20px;
   font-weight: 600;
@@ -28,10 +29,29 @@
 
 .input {
   padding: 18px;
-  color: var(--gray);
+  width: 527px;
+  background-color: var(--inputs);
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  color: var(--main);
   font-size: 16px;
+  resize: none;
 }
 
+input[type="date"] {
+  color: var(--main);
+}
+
+.input::placeholder {
+  color: var(--gray);
+}
+
+.error {
+  color: var(--button);
+  font-size: 16px;
+  font-weight: 500;
+}
 .button {
   margin: 0 auto;
   width: 166px;

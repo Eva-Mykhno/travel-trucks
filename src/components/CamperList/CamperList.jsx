@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import s from "./CamperList.module.css";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   selectCampers,
   selectFavorites,
@@ -11,8 +12,7 @@ import { getCampers } from "../../redux/operations";
 import { toggleFavorite } from "../../redux/slice";
 import Loader from "../Loader/Loader";
 import sprite from "../../img/icons.svg";
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import s from "./CamperList.module.css";
 
 const CamperList = () => {
   const dispatch = useDispatch();
