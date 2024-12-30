@@ -3,7 +3,7 @@ import s from "./NotFoundPage.module.css";
 
 const NotFoundPage = () => {
   return (
-    <div className={s.wrapper}>
+    <main className={s.wrapper}>
       <p className={s.text}>
         Sorry... The page is not found. You can go to the camper catalog.
       </p>
@@ -12,7 +12,7 @@ const NotFoundPage = () => {
           <p className={s.backText}>Catalog</p>
         </NavLink>
       </div>
-    </div>
+    </main>
   );
 };
 export default NotFoundPage;

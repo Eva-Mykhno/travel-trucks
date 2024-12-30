@@ -8,7 +8,7 @@ const CamperPage = () => {
   const { id } = useParams();
 
   return (
-    <div className={clsx(s.wrapper, "container")}>
+    <main className={clsx(s.wrapper, "container")}>
       <CamperCard id={id} />
 
       <div className={s.links}>
@@ -38,7 +38,7 @@ const CamperPage = () => {
           <RentForm />
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

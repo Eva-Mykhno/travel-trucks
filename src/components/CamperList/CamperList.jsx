@@ -44,7 +44,7 @@ const CamperList = () => {
   const shownCampers = isFiltered ? filteredCampers : campers;
 
   return (
-    <div className={s.wrapper}>
+    <section className={s.wrapper}>
       {isLoading && <Loader />}
       {isError && (
         <h3 className={s.errorMessage}>
@@ -161,7 +161,7 @@ const CamperList = () => {
           )}
         </>
       )}
-    </div>
+    </section>
   );
 };
 

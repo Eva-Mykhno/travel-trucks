@@ -5,10 +5,10 @@ import s from "./CatalogPage.module.css";
 
 const CatalogPage = () => {
   return (
-    <div className={clsx(s.wrapper, "container")}>
+    <main className={clsx(s.wrapper, "container")}>
       <SearchBox />
       <CamperList />
-    </div>
+    </main>
   );
 };
 export default CatalogPage;

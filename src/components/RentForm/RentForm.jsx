@@ -52,7 +52,7 @@ const RentForm = () => {
   };
 
   return (
-    <div className={s.wrapper}>
+    <section className={s.wrapper}>
       <h3 className={s.title}>Book your campervan now</h3>
       <p className={s.text}>Stay connected! We are always ready to help you.</p>
       <Formik
@@ -109,7 +109,7 @@ const RentForm = () => {
           </button>
         </Form>
       </Formik>
-    </div>
+    </section>
   );
 };
 

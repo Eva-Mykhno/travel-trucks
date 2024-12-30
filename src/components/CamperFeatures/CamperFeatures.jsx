@@ -37,7 +37,7 @@ const CamperFeatures = () => {
   ];
 
   return (
-    <div className={s.wrapper}>
+    <section className={s.wrapper}>
       {isLoading && <Loader />}
       {isError && <h3 className={s.errorMessage}>Something went wrong...</h3>}
       <ul className={s.list}>
@@ -98,7 +98,7 @@ const CamperFeatures = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

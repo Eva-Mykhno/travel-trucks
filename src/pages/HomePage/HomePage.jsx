@@ -3,9 +3,9 @@ import s from "./HomePage.module.css";
 
 const HomePage = () => {
   return (
-    <div className={s.wrapper}>
+    <main className={s.wrapper}>
       <Home />
-    </div>
+    </main>
   );
 };
 
