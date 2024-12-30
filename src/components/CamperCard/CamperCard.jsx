@@ -23,7 +23,7 @@ const CamperCard = ({ id }) => {
   }, [dispatch, id, camper]);
 
   return (
-    <div className={s.wrapper}>
+    <section className={s.wrapper}>
       {isLoading && <Loader />}
       {isError && <h3 className={s.errorMessage}>Something went wrong...</h3>}
 
@@ -59,7 +59,7 @@ const CamperCard = ({ id }) => {
         ))}
       </div>
       <p className={s.text}>{camper.description}</p>
-    </div>
+    </section>
   );
 };
 
